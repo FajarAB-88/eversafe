@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: eum-svr01
+  labels:
+    label-key1: eum-dashboard
+spec:
+  containers:
+    - name: eum-svr01
+      image: docker.io/library/eum:v1.0
+      ports:
+        - containerPort: 9093

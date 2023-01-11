@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: eversafe
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: eversafe
+  template:
+    metadata:
+      name: eversafe
+      labels:
+        app: eversafe
+    spec:
+      containers:
+      - name: eversafe-svr
+        image: docker.io/library/eum:v1.0
+        ports:
+        - containerPort: 9093
